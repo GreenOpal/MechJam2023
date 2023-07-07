@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using UnityEngine.Audio;
 
 namespace MechJam
 {
-    public class GameController : MonoBehaviour
+    public abstract class GameControllerBase : MonoBehaviour
     {
         #region Fields
 
@@ -58,7 +58,7 @@ namespace MechJam
             foreach (var behaviour in _configurables)
             {
                 behaviour.StartGame();
-            }            
+            }
         }
 
         public void FinishGame(bool endEarly)
@@ -87,10 +87,10 @@ namespace MechJam
         public void ResetGame()
         {
         }
-        
+
         #endregion
 
     }
 
-    
+
 }
