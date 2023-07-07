@@ -16,7 +16,7 @@ namespace MechJam
 
         [SerializeField] private GameConfig _config;
 
-        [SerializeField] protected ConfigurableBehaviour[] _configurables;
+        private ConfigurableBehaviour[] _configurables;
 
 
         #endregion
