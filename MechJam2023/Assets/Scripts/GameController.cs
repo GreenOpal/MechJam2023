@@ -44,6 +44,7 @@ namespace MechJam
             {
                 behaviour.Initialize(this);
             }
+            StartGame();
         }
 
         #endregion
