@@ -31,7 +31,7 @@ namespace MechJam
 
         #region Implementation
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _configurables = GetComponentsInChildren<ConfigurableBehaviour>();
             Init();
