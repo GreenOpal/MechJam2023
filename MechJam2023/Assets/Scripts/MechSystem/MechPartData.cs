@@ -5,7 +5,7 @@ using UnityEngine;
 namespace MechJam
 {
     [CreateAssetMenu(fileName ="MechPart_", menuName = "Data/Mech Part")]
-    public class MechPart : ScriptableObject
+    public class MechPartData : ScriptableObject
     {
         [Header("Stats")]
         [Range(0, 100)] public int Durability = 100;
@@ -19,5 +19,16 @@ namespace MechJam
         public string Id;
         public Sprite Image;
         public GameObject Prefab;
+    }
+
+    public struct MechPart
+    {
+        public MechPart(MechPartData partData)
+        {
+            data = partData;
+            Durability = partData.Durability;
+        }
+        public MechPartData data { get; private set; }
+        public int Durability { get; set; } //Modifiable values need to be separated to avoid overwriting the data
     }
 }

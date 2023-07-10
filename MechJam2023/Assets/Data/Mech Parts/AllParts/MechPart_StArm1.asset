@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc93fd31ffc89848979555d286e73a7, type: 3}
   m_Name: MechPart_StArm1
   m_EditorClassIdentifier: 
-  Durability: 99
+  Durability: 100
   Attack: 50
   Defense: 25
   PartType: 0

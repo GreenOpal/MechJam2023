@@ -17,11 +17,6 @@ namespace MechJam {
             RightLeg,
         }
         public string Name;
-        public MechPart Head;
-        public MechPart LeftArm;
-        public MechPart RightArm;
-        public MechPart LeftLeg;
-        public MechPart RightLeg;
 
         public Dictionary<AttackPart, MechPart> PartMap;
 
@@ -29,15 +24,10 @@ namespace MechJam {
         {
             Setup(name, parts.Item1, parts.Item2, parts.Item3, parts.Item4, parts.Item5);
         }
-        public void Setup(string name, MechPart head, MechPart leftArm, MechPart rightArm, 
+        public void Setup(string name, MechPart head, MechPart leftArm, MechPart rightArm,
             MechPart leftLeg, MechPart rightLeg)
         {
             Name = name;
-            Head = head;
-            LeftArm = leftArm;
-            RightArm = rightArm;
-            LeftLeg = leftLeg;
-            RightLeg = rightLeg;
             PartMap = new Dictionary<AttackPart, MechPart> {
                 { AttackPart.Head,head },
                 { AttackPart.LeftArm,leftArm},
@@ -46,6 +36,17 @@ namespace MechJam {
                 { AttackPart.RightLeg,rightLeg }
             };
             MechReport();
+        }
+
+        private void TestElements()
+        {
+            //Verification function to make sure elements are doing what they're supposed to!
+            Debug.LogWarning($"   def: SH ST SM" +
+                $"\natt SH: {ElementHelper.GetElementEffect(Element.Shooty, Element.Shooty)} / {ElementHelper.GetElementEffect(Element.Shooty, Element.Stabby)} / {ElementHelper.GetElementEffect(Element.Shooty, Element.Smashy)}" +
+                $"\natt ST: {ElementHelper.GetElementEffect(Element.Stabby, Element.Shooty)} / {ElementHelper.GetElementEffect(Element.Stabby, Element.Stabby)} / {ElementHelper.GetElementEffect(Element.Stabby, Element.Smashy)}" +
+                $"\natt SM: {ElementHelper.GetElementEffect(Element.Smashy, Element.Shooty)} / {ElementHelper.GetElementEffect(Element.Smashy, Element.Stabby)} / {ElementHelper.GetElementEffect(Element.Smashy, Element.Smashy)}");
+
+            
         }
 
         public void Attack(MechPart weapon, Mech opponent, AttackPart target)
@@ -63,7 +64,8 @@ namespace MechJam {
             int damageTaken = DetermineDamageTaken(attack, weapon, PartMap[target]);
             var targetPart = PartMap[target];
             targetPart.Durability -= damageTaken;
-            Debug.Log($"Part {targetPart.Name} ({targetPart.Element}) takes {damageTaken} damage!");
+            PartMap[target] = targetPart;
+            Debug.Log($"Part {targetPart.data.Name} ({targetPart.data.Element}) takes {damageTaken} damage!");
             CheckPartDurability(PartMap[target]);
         }
 
@@ -78,7 +80,7 @@ namespace MechJam {
 
         public void DetermineAIAttack(Mech opponent)
         {
-            var availableWeapons = PartMap.Values.Where((part) => part.Durability > 0 && part.PartType != PartType.Head).ToArray();
+            var availableWeapons = PartMap.Values.Where((part) => part.Durability > 0 && part.data.PartType != PartType.Head).ToArray();
             var weapon = availableWeapons[Random.Range(0, availableWeapons.Length)];
 
             var availableTargets = opponent.PartMap.Where((part) => part.Value.Durability > 0).ToArray();
@@ -91,13 +93,13 @@ namespace MechJam {
         private int DetermineAttackValue(MechPart weapon)
         {
             //Lots of stuff to figure out here - head variation? Random pertubation? Does  tier factor into this beyond base stats? But start simple
-            return weapon.Attack;
+            return weapon.data.Attack;
         }
         private int DetermineDamageTaken(int baseDamage, MechPart weapon, MechPart target)
         {
             //Same caveats as above, keep it real basic to start, will need to ensure defense values are lower than dmg
-            var damage = ElementHelper.GetElementEffect(weapon.Element, target.Element) * baseDamage;
-            damage -= target.Defense;
+            var damage = ElementHelper.GetElementEffect(weapon.data.Element, target.data.Element) * baseDamage;
+            damage -= target.data.Defense;
             return Mathf.Max( Mathf.FloorToInt(damage), 1);
         }
 
@@ -105,9 +107,11 @@ namespace MechJam {
         {
             //Some simple debug info
             Debug.LogWarning($"Report on mech {Name}:" +
-                $"\nHead: ({Head.Element}) {Head.Durability}/100 " +
-                $"\nL_Arm: ({LeftArm.Element}) {LeftArm.Durability} R_Arm: ({RightArm.Element}) {RightArm.Durability}" +
-                $"\nL_Leg: ({LeftLeg.Element}) {LeftLeg.Durability} R_Leg: ({RightLeg.Element}) {RightLeg.Durability}");
+                $"\nHead: ({PartMap[AttackPart.Head].data.Element}) {PartMap[AttackPart.Head].Durability}/100 " +
+                $"\nL_Arm: ({PartMap[AttackPart.LeftArm].data.Element}) {PartMap[AttackPart.LeftArm].Durability} " +
+                $"R_Arm: ({PartMap[AttackPart.RightArm].data.Element}) {PartMap[AttackPart.RightArm].Durability}" +
+                $"\nL_Leg: ({PartMap[AttackPart.LeftLeg].data.Element}) {PartMap[AttackPart.LeftLeg].Durability} " +
+                $"R_Leg: ({PartMap[AttackPart.RightLeg].data.Element}) {PartMap[AttackPart.RightLeg].Durability}");
         }
     }
 

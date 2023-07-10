@@ -6,10 +6,10 @@ namespace MechJam {
 
     public class PartCollection : ScriptableObject
     {
-        public MechPart[] AllParts;
+        public MechPartData[] AllParts;
         public MechPart GetRandomPart()
         {
-            return AllParts[Random.Range(0, AllParts.Length)];
+            return new MechPart(AllParts[Random.Range(0, AllParts.Length)]);
         }
     }
 }

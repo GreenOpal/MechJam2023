@@ -9,13 +9,15 @@ namespace MechJam
         private const float multiplier = 1.2f;
         public static float GetElementEffect(Element attacker, Element defense)
         {
-            switch (((int)attacker - (int)defense) % 2)
+            switch (((int)attacker - (int)defense))
             {
                 case 0:
                     return 1;
-                case 1:
-                    return multiplier;
                 case 2:
+                case -1:
+                    return multiplier;
+                case 1:
+                case -2:
                     return 1f / multiplier;
                 default:
                     Debug.LogError("Uh oh!");
