@@ -20,4 +20,4 @@ MonoBehaviour:
   Name: Mounted Basic Rifle
   Id: Leg_Smashy_1
   Image: {fileID: 21300000, guid: 50acb9d6e8b8ebd4088ba0b9710d05ae, type: 3}
-  Prefab: {fileID: 0}
+  Prefab: {fileID: 3753640520313859827, guid: 8f9018a1b4103c140b6ec0aaa540b0ba, type: 3}

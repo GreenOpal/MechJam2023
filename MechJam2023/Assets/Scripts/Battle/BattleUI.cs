@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace MechJam {
-    public class BattleUI : ConfigurableBehaviour
+    public class BattleUI : BattleConfigurableBehaviour
     {
         [SerializeField] private Button[] ActionButtons;
         [SerializeField] private Button Back;
@@ -60,8 +58,7 @@ namespace MechJam {
 
         private void StartAttack()
         {
-            var bc = (BattleController)_controller;
-            bc.PlayerMech.Attack((Mech.AttackPart)selectedWeapon,bc.EnemyMech, (Mech.AttackPart)selectedTarget);
+            _battleController.PlayerMech.Attack((Mech.AttackPart)selectedWeapon, _battleController.EnemyMech, (Mech.AttackPart)selectedTarget);
             OnBack();
         }
     }

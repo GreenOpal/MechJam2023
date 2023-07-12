@@ -47,3 +47,9 @@ TagManager:
   - name: Player
     uniqueID: 1977403993
     locked: 0
+  - name: MechParts
+    uniqueID: 2578286713
+    locked: 0
+  - name: Overlay
+    uniqueID: 802433991
+    locked: 0
