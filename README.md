@@ -5,3 +5,4 @@ Unity Version: TBD!
 Starring:
 Antony Churchill - Code & Source Control!
 Shivani Rambaran - Design
+Harvey Newbigin	- Character Art
