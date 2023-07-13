@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7959545425736035456}
   m_Layer: 0
-  m_Name: Leg_Stabby_02_L
+  m_Name: Leg_Shooty_03_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7264274146707235832}
   - component: {fileID: 4976027887293255884}
   m_Layer: 0
-  m_Name: stabby_leg_02_l
+  m_Name: shooty_leg_03_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: -1716680583
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ef2e8a37888c72249b987e32a236ea61, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e95de8973e4af0d4aa2db20bad6c6763, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
