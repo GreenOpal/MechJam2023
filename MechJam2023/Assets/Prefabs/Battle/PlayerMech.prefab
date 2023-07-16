@@ -13,6 +13,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3230372534740255681, guid: 432491fbb08cb0d4289dd25f12682155, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230372534740255681, guid: 432491fbb08cb0d4289dd25f12682155, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -54,7 +58,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3540351211026606781, guid: 432491fbb08cb0d4289dd25f12682155, type: 3}
       propertyPath: m_Name
-      value: MechViewBase
+      value: PlayerMech
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637466601434051871, guid: 432491fbb08cb0d4289dd25f12682155, type: 3}
+      propertyPath: _AttackDirection.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

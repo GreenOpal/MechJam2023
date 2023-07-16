@@ -228,10 +228,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3198494298760140892, guid: 62001b0d4f0c6934d8178d1e6df2da37, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198494298760140892, guid: 62001b0d4f0c6934d8178d1e6df2da37, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.33
       objectReference: {fileID: 0}
@@ -279,17 +275,9 @@ PrefabInstance:
       propertyPath: _TweenDirection.x
       value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5659772575487635074, guid: 62001b0d4f0c6934d8178d1e6df2da37, type: 3}
-      propertyPath: _AttackDirection.x
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 8743533473329456269, guid: 62001b0d4f0c6934d8178d1e6df2da37, type: 3}
       propertyPath: m_FlipX
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743533473329456269, guid: 62001b0d4f0c6934d8178d1e6df2da37, type: 3}
-      propertyPath: m_Color.a
-      value: 0.05490196
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -450,14 +438,6 @@ PrefabInstance:
       propertyPath: _TweenDirection.x
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5659772575487635074, guid: 0c3dc7650bf11b646be7e8a963b804b3, type: 3}
-      propertyPath: _AttackDirection.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8743533473329456269, guid: 0c3dc7650bf11b646be7e8a963b804b3, type: 3}
-      propertyPath: m_Color.a
-      value: 0.05490196
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -518,7 +498,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350683643}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

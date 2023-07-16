@@ -204,12 +204,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4ea02629ebab12f4bba79c5cd10a701a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3935a9af89fd9634e908dfd7164ebce3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.66, y: 6.07}
+  m_Size: {x: 1.25, y: 1.49}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -233,6 +233,7 @@ MonoBehaviour:
   _rightArmLocation: {fileID: 7994687167238918620}
   _leftLegLocation: {fileID: 5620273233813088360}
   _rightLegLocation: {fileID: 6248449763829236386}
+  MechName: 
 --- !u!114 &5637466601434051871
 MonoBehaviour:
   m_ObjectHideFlags: 0
