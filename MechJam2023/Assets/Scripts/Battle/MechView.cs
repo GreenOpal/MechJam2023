@@ -8,6 +8,8 @@ namespace MechJam
 { 
     public class MechView : MonoBehaviour
     {
+        [SerializeField] private MechVfxController mechVfxController;
+
         [SerializeField] private Transform _headLocation;
         [SerializeField] private Transform _leftArmLocation;
         [SerializeField] private Transform _rightArmLocation;
@@ -15,6 +17,7 @@ namespace MechJam
         [SerializeField] private Transform _rightLegLocation;
 
         private List<GameObject> _activeMechParts = new List<GameObject>();
+        public string MechName;
 
         private Mech mech;
 
@@ -26,6 +29,7 @@ namespace MechJam
                 Destroy(currentPart);
             }
             _activeMechParts.Clear();
+            MechName = mech.Name;
             PositionMechPart(mech.PartMap[Parts.Head], _headLocation);
             PositionMechPart(mech.PartMap[Parts.LeftArm], _leftArmLocation);
             PositionMechPart(mech.PartMap[Parts.RightArm], _rightArmLocation);
@@ -36,6 +40,15 @@ namespace MechJam
         private void PositionMechPart(MechPart part, Transform location)
         {
             var newPart = Instantiate(part.data.Prefab, location);
+        }
+
+        public void Attack()
+        {
+            mechVfxController.ShowAttackVfx();
+        }
+        public void GetHit()
+        {
+            mechVfxController.ShowHitVfx();
         }
     }
 }

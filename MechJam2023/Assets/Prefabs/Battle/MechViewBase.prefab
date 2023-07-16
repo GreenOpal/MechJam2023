@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 3230372534740255681}
   - component: {fileID: 8782167109022056208}
   - component: {fileID: 8320152661404630768}
+  - component: {fileID: 5637466601434051871}
   m_Layer: 0
   m_Name: MechViewBase
   m_TagString: Untagged
@@ -226,11 +227,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a5755d7fc0d7f49a41e8075e9355a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mechVfxController: {fileID: 5637466601434051871}
   _headLocation: {fileID: 8115155306338101654}
   _leftArmLocation: {fileID: 4705033990157473498}
   _rightArmLocation: {fileID: 7994687167238918620}
   _leftLegLocation: {fileID: 5620273233813088360}
   _rightLegLocation: {fileID: 6248449763829236386}
+--- !u!114 &5637466601434051871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3540351211026606781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac4e6ca21203b64ea003b5cc38dd2d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _TweenTarget: {fileID: 3230372534740255681}
+  _AttackDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &3541186107504416170
 GameObject:
   m_ObjectHideFlags: 0

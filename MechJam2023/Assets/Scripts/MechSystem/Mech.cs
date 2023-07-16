@@ -16,17 +16,21 @@ namespace MechJam {
             LeftLeg,
             RightLeg,
         }
-        public string Name;
+        public string Name { get; private set; }
+        public bool IsPlayer { get; private set; }
 
         public Dictionary<AttackPart, MechPart> PartMap;
+        public BattleController battleController;
 
-        public void Setup (string name, (MechPart, MechPart, MechPart, MechPart, MechPart) parts)
+        public void Setup (BattleController controller, bool isPlayer, string name, (MechPart, MechPart, MechPart, MechPart, MechPart) parts)
         {
-            Setup(name, parts.Item1, parts.Item2, parts.Item3, parts.Item4, parts.Item5);
+            Setup(controller, isPlayer, name, parts.Item1, parts.Item2, parts.Item3, parts.Item4, parts.Item5);
         }
-        public void Setup(string name, MechPart head, MechPart leftArm, MechPart rightArm,
+        public void Setup(BattleController controller, bool isPlayer, string name, MechPart head, MechPart leftArm, MechPart rightArm,
             MechPart leftLeg, MechPart rightLeg)
         {
+            IsPlayer = isPlayer;
+            battleController = controller;
             Name = name;
             PartMap = new Dictionary<AttackPart, MechPart> {
                 { AttackPart.Head,head },
@@ -53,10 +57,12 @@ namespace MechJam {
         {
             var attack = DetermineAttackValue(weapon);
             opponent.GetHit(attack, weapon, target);
+            battleController.OnMechAttacks?.Invoke(this);
         }
         public void Attack(AttackPart weapon, Mech opponent, AttackPart target)
         {
             Attack(PartMap[weapon], opponent, target);
+            
         }
 
         public void GetHit(int attack, MechPart weapon, AttackPart target)
@@ -67,6 +73,7 @@ namespace MechJam {
             PartMap[target] = targetPart;
             Debug.Log($"Part {targetPart.data.Name} ({targetPart.data.Element}) takes {damageTaken} damage!");
             CheckPartDurability(PartMap[target]);
+            battleController.OnMechWasAttacked?.Invoke(this, weapon);
         }
 
         private void CheckPartDurability(MechPart mechPart)

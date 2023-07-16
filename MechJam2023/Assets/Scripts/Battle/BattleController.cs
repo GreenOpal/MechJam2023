@@ -18,6 +18,9 @@ namespace MechJam
         #region Actions
         public Action<Mech> OnPlayerMechAssigned;
         public Action<Mech> OnEnemyMechAssigned;
+
+        public Action<Mech> OnMechAttacks;
+        public Action<Mech,MechPart> OnMechWasAttacked;
         #endregion
 
         #region Methods
@@ -26,10 +29,10 @@ namespace MechJam
         {
             base.Awake();
             PlayerMech = new Mech();
-            PlayerMech.Setup("PlayerMech",GetRandomMech());
+            PlayerMech.Setup(this, true, "PlayerMech",GetRandomMech());
             OnPlayerMechAssigned?.Invoke(PlayerMech);
             EnemyMech = new Mech();
-            EnemyMech.Setup("EnemyMech",GetRandomMech());
+            EnemyMech.Setup(this, false, "EnemyMech",GetRandomMech());
             OnEnemyMechAssigned?.Invoke(EnemyMech);
         }
         (MechPart, MechPart, MechPart, MechPart, MechPart ) GetRandomMech()
