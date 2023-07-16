@@ -8,30 +8,27 @@ namespace MechJam
 {
     public class MechAIController : BattleConfigurableBehaviour
     {
-        [SerializeField] private float enemyAttackDelay = 1f;
-        private Mech enemyMech;
-        private Mech playerMech;
+        [SerializeField] private float enemyAttackDelay = 3f;
         private bool preparingAttack;
         public override void Initialize(GameControllerBase controller)
         {
             base.Initialize(controller);
-            _battleController.OnEnemyMechAssigned += (mech) => enemyMech = mech;
-            _battleController.OnPlayerMechAssigned += (mech) => playerMech = mech;
             _battleController.OnMechAttacks += PrepareEnemyAttack;
         }
 
         private void PrepareEnemyAttack(Mech mech)
         {
-            if (preparingAttack || mech.Name != enemyMech.Name) return;
+            if (preparingAttack || !mech.IsPlayer ) return;
 
-            StartCoroutine(QueueEnemyAttack());
+            StartCoroutine(QueueEnemyAttack(mech));
         }
-        private IEnumerator QueueEnemyAttack()
+        private IEnumerator QueueEnemyAttack(Mech mech)
         {
             preparingAttack = true;
 
             yield return new WaitForSeconds(enemyAttackDelay);
-            enemyMech.DetermineAIAttack(playerMech);
+            mech.DetermineAIAttack(_battleController.PlayerMech);
+            preparingAttack = false;
         }
 
 

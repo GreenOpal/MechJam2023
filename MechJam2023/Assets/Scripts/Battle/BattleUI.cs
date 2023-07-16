@@ -25,8 +25,13 @@ namespace MechJam {
                 var currentButton = i;
                 TargetButtons[i].onClick.AddListener(() => UseTargetButton(currentButton));
             }
+            _battleController.OnMechWasAttacked += DetermineAttackStatus;
         }
 
+        private void DetermineAttackStatus(Mech arg1, MechPart arg2)
+        {
+            //TODO
+        }
 
         private void UseAttackButton( int i )
         {

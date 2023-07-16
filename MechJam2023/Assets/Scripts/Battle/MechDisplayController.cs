@@ -16,16 +16,26 @@ namespace MechJam
         {
             base.Initialize(controller);
 
-            _battleController.OnPlayerMechAssigned += (mech) => _playerView.DisplayMech(mech);
-            _battleController.OnEnemyMechAssigned += (mech) => _enemyView.DisplayMech(mech);
+            _battleController.OnMechAssigned += AssignMech;
 
             _battleController.OnMechAttacks += DisplayAttack;
             _battleController.OnMechWasAttacked += DisplayGetHit;
         }
 
+        private void AssignMech(Mech mech)
+        {
+            if (mech.IsPlayer)
+            {
+                _playerView.DisplayMech(mech);
+            } else
+            {
+                _enemyView.DisplayMech(mech);
+            }
+        }
+
         private void DisplayGetHit(Mech mech, MechPart _)
         {
-            if (mech.Name == _playerView.MechName)
+            if (mech.IsPlayer)
             {
                 _playerView.GetHit();
             }
@@ -37,7 +47,7 @@ namespace MechJam
 
         private void DisplayAttack(Mech mech)
         {
-            if (mech.Name == _playerView.MechName)
+            if (mech.IsPlayer)
             {
                 _playerView.Attack();
             } else
