@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Parts_LeftLegs
   m_EditorClassIdentifier: 
   AllParts:
-  - {fileID: 11400000, guid: 0b355d7272694cb4eaf179537170f867, type: 2}
+  - {fileID: 11400000, guid: 0abd14bdc2bd3ba489b27add0191a793, type: 2}
+  - {fileID: 11400000, guid: 9c72290cacb0ade49887e8b4d06cee41, type: 2}
+  - {fileID: 11400000, guid: aba32340f196d9d409f46f267c150c67, type: 2}
+  - {fileID: 11400000, guid: e60f8e59de608274592b16f9ed4401d7, type: 2}
   - {fileID: 11400000, guid: bfc37b948105ab743add268b1133a064, type: 2}
+  - {fileID: 11400000, guid: cedcf129fdc6cdf40996982475f23c86, type: 2}

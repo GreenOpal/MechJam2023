@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Parts_RightArms
   m_EditorClassIdentifier: 
   AllParts:
-  - {fileID: 11400000, guid: 62a84125373c21648b1132aef4b73e53, type: 2}
+  - {fileID: 11400000, guid: c93403b731f46ca45b05334f8114923e, type: 2}
+  - {fileID: 11400000, guid: aab4bb5558952604fa835d5ed5c93e2d, type: 2}
+  - {fileID: 11400000, guid: 56f38910c5a2f924aa35d3f46b309c1a, type: 2}
+  - {fileID: 11400000, guid: 0a8735703c95f8f4e9138884261a8ab1, type: 2}
+  - {fileID: 11400000, guid: 6f1e39e635793bb429eb9227101b2f09, type: 2}
+  - {fileID: 11400000, guid: 931a149f5a0d4ac4985d5a6a378f101e, type: 2}

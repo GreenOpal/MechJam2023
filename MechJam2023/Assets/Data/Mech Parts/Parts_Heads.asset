@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Parts_Heads
   m_EditorClassIdentifier: 
   AllParts:
-  - {fileID: 11400000, guid: f104b1f4e037816429c7bf1edb0b2a1b, type: 2}
+  - {fileID: 11400000, guid: 48c53b091556d41428fe0bbe651f9be3, type: 2}
+  - {fileID: 11400000, guid: 07aef501e133b9b48a5634ebb928c3d9, type: 2}
+  - {fileID: 11400000, guid: 9c292ea5041bd4846923718406d3b5ba, type: 2}
+  - {fileID: 11400000, guid: 31791db18aac42f4aba4659583d0816b, type: 2}
+  - {fileID: 11400000, guid: a0c23959b4bd5b1498ee4ffa1a2fce2e, type: 2}
+  - {fileID: 11400000, guid: 4484eedd5d90679419a923406ed3310f, type: 2}
