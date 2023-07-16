@@ -27,7 +27,7 @@ namespace MechJam {
                 foreach (var mechPart in PartMap.Values)
                 {
                     currentHealth += mechPart.Durability;
-                    maxHealth += mechPart.data.MaxDurability;
+                    maxHealth += mechPart.MaxDurability;
                 }
                 return currentHealth / maxHealth;
             }
@@ -114,13 +114,15 @@ namespace MechJam {
         private int DetermineAttackValue(MechPart weapon)
         {
             //Lots of stuff to figure out here - head variation? Random pertubation? Does  tier factor into this beyond base stats? But start simple
-            return weapon.data.Attack;
+            return weapon.Attack;
         }
         private int DetermineDamageTaken(int baseDamage, MechPart weapon, MechPart target)
         {
             //Same caveats as above, keep it real basic to start, will need to ensure defense values are lower than dmg
             var damage = ElementHelper.GetElementEffect(weapon.data.Element, target.data.Element) * baseDamage;
-            damage -= target.data.Defense;
+            float defenseFactor = (1 - target.Defense / 100f);
+            damage *= defenseFactor;
+            Debug.LogWarning("damaggio: " + damage);
             return Mathf.Max( Mathf.FloorToInt(damage), 1);
         }
 

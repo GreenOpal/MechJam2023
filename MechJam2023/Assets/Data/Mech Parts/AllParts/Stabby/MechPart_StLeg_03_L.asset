@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc93fd31ffc89848979555d286e73a7, type: 3}
   m_Name: MechPart_StLeg_03_L
   m_EditorClassIdentifier: 
-  Durability: 100
-  Attack: 50
-  Defense: 25
   PartType: 1
   Element: 1
+  Tier: 3
   Name: Mounted Basic Rifle
   Id: Leg_Stabby_03_L
   Image: {fileID: 21300000, guid: 50acb9d6e8b8ebd4088ba0b9710d05ae, type: 3}

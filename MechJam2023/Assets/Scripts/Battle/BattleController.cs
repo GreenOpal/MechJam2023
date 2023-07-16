@@ -27,6 +27,7 @@ namespace MechJam
         protected override void Awake()
         {
             base.Awake();
+            PartInfoHelper.Setup(Config.MechPartValues);
             PlayerMech = new Mech();
             PlayerMech.Setup(this, true, "PlayerMech",GetRandomMech());
             OnMechAssigned.Invoke(PlayerMech);

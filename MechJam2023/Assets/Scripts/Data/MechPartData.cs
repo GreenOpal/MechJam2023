@@ -8,11 +8,9 @@ namespace MechJam
     public class MechPartData : ScriptableObject
     {
         [Header("Stats")]
-        [Range(0, 100)] public int MaxDurability = 100;
-        [Range(0, 100)] public int Attack = 50;
-        [Range(0, 100)] public int Defense = 50;
         public PartType PartType;
         public Element Element;
+        public int Tier;
         //TODO: Would like to have overheating as another balance valve
         [Header("Setup")]
         public string Name;
@@ -26,9 +24,18 @@ namespace MechJam
         public MechPart(MechPartData partData)
         {
             data = partData;
-            Durability = partData.MaxDurability;
+            var partValues = PartInfoHelper.GetValues(data.Tier, data.Element, data.PartType);
+            MaxDurability = partValues.Durability;
+            Durability = partValues.Durability;
+            Attack = partValues.Attack;
+            Defense = partValues.Defense;
+
         }
+        public int MaxDurability { get; private set; }
+        public int Durability { get; set; } 
+        public int Attack { get; private set; }
+        public int Defense { get; private set; }
+
         public MechPartData data { get; private set; }
-        public int Durability { get; set; } //Modifiable values need to be separated to avoid overwriting the data
     }
 }

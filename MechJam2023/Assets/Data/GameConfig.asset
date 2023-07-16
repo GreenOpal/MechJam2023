@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   _PlayerSpeed: 20
+  MechPartValues: {fileID: 11400000, guid: 5ce541547f6c1144fb9b0c5446959756, type: 2}
   Heads: {fileID: 11400000, guid: 12404d23ebe14594992b51bb4b10899e, type: 2}
   LeftArms: {fileID: 11400000, guid: b39f706b28f776d4b89e74ef08f6d646, type: 2}
   RightArms: {fileID: 11400000, guid: e0a73641a84bd18438cfd16f30cb55f5, type: 2}
