@@ -8,7 +8,7 @@ namespace MechJam
     public class MechPartData : ScriptableObject
     {
         [Header("Stats")]
-        [Range(0, 100)] public int Durability = 100;
+        [Range(0, 100)] public int MaxDurability = 100;
         [Range(0, 100)] public int Attack = 50;
         [Range(0, 100)] public int Defense = 50;
         public PartType PartType;
@@ -26,7 +26,7 @@ namespace MechJam
         public MechPart(MechPartData partData)
         {
             data = partData;
-            Durability = partData.Durability;
+            Durability = partData.MaxDurability;
         }
         public MechPartData data { get; private set; }
         public int Durability { get; set; } //Modifiable values need to be separated to avoid overwriting the data

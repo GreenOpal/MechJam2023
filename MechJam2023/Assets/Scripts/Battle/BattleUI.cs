@@ -9,6 +9,9 @@ namespace MechJam {
         [SerializeField] private CanvasGroup Targets;
         [SerializeField] private Button[] TargetButtons;
 
+        [SerializeField] public Image PlayerHPBar;
+        [SerializeField] public Image EnemyHPBar;
+
         private int selectedWeapon;
         private int selectedTarget;
 
@@ -28,9 +31,15 @@ namespace MechJam {
             _battleController.OnMechWasAttacked += DetermineAttackStatus;
         }
 
-        private void DetermineAttackStatus(Mech arg1, MechPart arg2)
+        private void DetermineAttackStatus(Mech mech, MechPart part)
         {
-            //TODO
+            UpdatePlayerHealth();
+        }
+
+        private void UpdatePlayerHealth()
+        {
+            PlayerHPBar.fillAmount = _battleController.PlayerMech.CurrentHealth;
+            EnemyHPBar.fillAmount = _battleController.EnemyMech.CurrentHealth;
         }
 
         private void UseAttackButton( int i )

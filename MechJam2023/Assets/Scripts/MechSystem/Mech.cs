@@ -18,6 +18,20 @@ namespace MechJam {
         }
         public string Name { get; private set; }
         public bool IsPlayer { get; private set; }
+        public float CurrentHealth
+        {
+            get
+            {
+                float currentHealth = 0;
+                float maxHealth = 0;
+                foreach (var mechPart in PartMap.Values)
+                {
+                    currentHealth += mechPart.Durability;
+                    maxHealth += mechPart.data.MaxDurability;
+                }
+                return currentHealth / maxHealth;
+            }
+        }
 
         public Dictionary<AttackPart, MechPart> PartMap;
         public BattleController battleController;
@@ -113,7 +127,7 @@ namespace MechJam {
         private void MechReport()
         {
             //Some simple debug info
-            Debug.LogWarning($"Report on mech {Name}:" +
+            Debug.Log($"Report on mech {Name}:" +
                 $"\nHead: ({PartMap[AttackPart.Head].data.Element}) {PartMap[AttackPart.Head].Durability}/100 " +
                 $"\nL_Arm: ({PartMap[AttackPart.LeftArm].data.Element}) {PartMap[AttackPart.LeftArm].Durability} " +
                 $"R_Arm: ({PartMap[AttackPart.RightArm].data.Element}) {PartMap[AttackPart.RightArm].Durability}" +
