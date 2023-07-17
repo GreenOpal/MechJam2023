@@ -16,7 +16,7 @@ namespace MechJam
         public string Name;
         public string Id;
         public Sprite Image;
-        public GameObject Prefab;
+        public MechPartView Prefab;
     }
 
     public struct MechPart

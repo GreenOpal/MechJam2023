@@ -677,6 +677,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1765103259884224359, guid: 32a7678982c3c4c459a4be0f71349e76, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -32
+      objectReference: {fileID: 0}
     - target: {fileID: 2274510696283428498, guid: 32a7678982c3c4c459a4be0f71349e76, type: 3}
       propertyPath: m_Name
       value: BattleController
@@ -737,6 +741,18 @@ PrefabInstance:
       propertyPath: _playerView
       value: 
       objectReference: {fileID: 1345055098}
+    - target: {fileID: 6685836878676819755, guid: 32a7678982c3c4c459a4be0f71349e76, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -136
+      objectReference: {fileID: 0}
+    - target: {fileID: 7140986393008386792, guid: 32a7678982c3c4c459a4be0f71349e76, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -136
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785621412131052501, guid: 32a7678982c3c4c459a4be0f71349e76, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 230
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
