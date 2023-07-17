@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System;
+using TMPro;
 
 namespace MechJam {
     public class BattleUI : BattleConfigurableBehaviour
@@ -11,6 +14,8 @@ namespace MechJam {
 
         [SerializeField] public Image PlayerHPBar;
         [SerializeField] public Image EnemyHPBar;
+        [SerializeField] public Image MechPartHPBar;
+        [SerializeField] private TextMeshProUGUI MechPartStatsText;
 
         private int selectedWeapon;
         private int selectedTarget;
@@ -27,6 +32,9 @@ namespace MechJam {
             {
                 var currentButton = i;
                 TargetButtons[i].onClick.AddListener(() => UseTargetButton(currentButton));
+                var eventTrigger = TargetButtons[i].gameObject.AddComponent<EventTrigger>();
+                AddEventTriggerListener(eventTrigger, EventTriggerType.PointerEnter, (data) => ShowMechPartStats(TargetButtons[currentButton]));
+                AddEventTriggerListener(eventTrigger, EventTriggerType.PointerExit, HideMechPartStats);
             }
             _battleController.OnMechWasAttacked += DetermineAttackStatus;
         }
@@ -49,6 +57,7 @@ namespace MechJam {
             selectedWeapon = i + 1;
             Targets.alpha = 1;
         }
+
         private void UseTargetButton(int currentButton)
         {
             TargetButtons[currentButton].Select();
@@ -63,6 +72,7 @@ namespace MechJam {
                 //TODO: UI Tooltip kinda element hopefully
             }
         }
+
         private void OnBack()
         {
             selectedWeapon = 0;
@@ -74,6 +84,40 @@ namespace MechJam {
         {
             _battleController.PlayerMech.Attack((Mech.AttackPart)selectedWeapon, _battleController.EnemyMech, (Mech.AttackPart)selectedTarget);
             OnBack();
+        }
+
+        private void ShowMechPartStats(Button button)
+        {
+            MechPart part;
+            if (_battleController.PlayerMech.IsPlayer)
+            {
+                part = _battleController.PlayerMech.PartMap[(Mech.AttackPart)(button.transform.GetSiblingIndex() - 1)];
+            }
+            else
+            {
+                part = _battleController.EnemyMech.PartMap[(Mech.AttackPart)(button.transform.GetSiblingIndex() - 1)];
+            }
+
+            MechPartHPBar.transform.parent.gameObject.SetActive(true);
+            MechPartHPBar.gameObject.SetActive(true);
+            MechPartHPBar.fillAmount = (float)part.Durability / part.MaxDurability;
+            MechPartStatsText.text = $"Attack: {part.Attack}\nDefense: {part.Defense}";
+        }
+
+
+        private void HideMechPartStats(BaseEventData eventData)
+        {
+            MechPartHPBar.gameObject.SetActive(false);
+            MechPartStatsText.text = string.Empty;
+            MechPartHPBar.transform.parent.gameObject.SetActive(false);
+        }
+
+        private void AddEventTriggerListener(EventTrigger eventTrigger, EventTriggerType triggerType, Action<BaseEventData> callback)
+        {
+            var entry = new EventTrigger.Entry();
+            entry.eventID = triggerType;
+            entry.callback.AddListener((data) => callback.Invoke(data));
+            eventTrigger.triggers.Add(entry);
         }
     }
 }

@@ -1,4 +1,4 @@
-
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,6 +16,7 @@ namespace MechJam {
             LeftLeg,
             RightLeg,
         }
+
         public string Name { get; private set; }
         public bool IsPlayer { get; private set; }
         public float CurrentHealth
@@ -40,6 +41,7 @@ namespace MechJam {
         {
             Setup(controller, isPlayer, name, parts.Item1, parts.Item2, parts.Item3, parts.Item4, parts.Item5);
         }
+
         public void Setup(BattleController controller, bool isPlayer, string name, MechPart head, MechPart leftArm, MechPart rightArm,
             MechPart leftLeg, MechPart rightLeg)
         {
@@ -64,7 +66,6 @@ namespace MechJam {
                 $"\natt ST: {ElementHelper.GetElementEffect(Element.Stabby, Element.Shooty)} / {ElementHelper.GetElementEffect(Element.Stabby, Element.Stabby)} / {ElementHelper.GetElementEffect(Element.Stabby, Element.Smashy)}" +
                 $"\natt SM: {ElementHelper.GetElementEffect(Element.Smashy, Element.Shooty)} / {ElementHelper.GetElementEffect(Element.Smashy, Element.Stabby)} / {ElementHelper.GetElementEffect(Element.Smashy, Element.Smashy)}");
 
-            
         }
 
         public void Attack(MechPart weapon, Mech opponent, AttackPart target)
@@ -76,7 +77,6 @@ namespace MechJam {
         public void Attack(AttackPart weapon, Mech opponent, AttackPart target)
         {
             Attack(PartMap[weapon], opponent, target);
-            
         }
 
         public void GetHit(int attack, MechPart weapon, AttackPart target)
@@ -101,12 +101,12 @@ namespace MechJam {
 
         public void DetermineAIAttack(Mech opponent)
         {
-            var availableWeapons = PartMap.Values.Where((part) => part.Durability > 0 && part.data.PartType != PartType.Head).ToArray();
-            var weapon = availableWeapons[Random.Range(0, availableWeapons.Length)];
+            var availableWeapons = PartMap.Values.Where(part => part.Durability > 0 && part.data.PartType != PartType.Head).ToArray();
+            var weapon = availableWeapons[UnityEngine.Random.Range(0, availableWeapons.Length)];
 
-            var availableTargets = opponent.PartMap.Where((part) => part.Value.Durability > 0).ToArray();
-            var target = availableTargets[Random.Range(0, availableTargets.Length)];
-            //To be refined
+            var availableTargets = opponent.PartMap.Where(part => part.Value.Durability > 0).ToArray();
+            var target = availableTargets[UnityEngine.Random.Range(0, availableTargets.Length)];
+            // To be refined
             Attack(weapon, opponent, target.Key);
         }
 
