@@ -1,4 +1,4 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 using Parts = MechJam.Mech.AttackPart;
@@ -40,6 +40,7 @@ namespace MechJam
         private void PositionMechPart(MechPart part, Transform location)
         {
             var newPart = Instantiate(part.data.Prefab, location);
+            newPart.transform.Translate(-newPart.PivotPoint.localPosition);
         }
 
         public void Attack()
