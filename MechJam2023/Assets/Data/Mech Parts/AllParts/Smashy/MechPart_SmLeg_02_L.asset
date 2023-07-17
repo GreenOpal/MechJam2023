@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efc93fd31ffc89848979555d286e73a7, type: 3}
-  m_Name: MechPart_ShArm_02_R
+  m_Name: MechPart_SmLeg_02_L
   m_EditorClassIdentifier: 
-  PartType: 0
-  Element: 0
+  PartType: 1
+  Element: 2
   Tier: 2
   Name: Mounted Basic Rifle
-  Id: Arm_Stabby_1
+  Id: Leg_Smashy_2
   Image: {fileID: 21300000, guid: 50acb9d6e8b8ebd4088ba0b9710d05ae, type: 3}
-  Prefab: {fileID: 3753640520313859827, guid: f3cfbe40d9481e3498c0cde8448ae58b, type: 3}
+  Prefab: {fileID: 3753640520313859827, guid: 792d6169059fb4248a154302bd9cc49f, type: 3}

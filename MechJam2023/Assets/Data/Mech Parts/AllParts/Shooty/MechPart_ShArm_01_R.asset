@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MechPart_ShArm_01_R
   m_EditorClassIdentifier: 
   PartType: 0
-  Element: 1
+  Element: 0
   Tier: 1
   Name: Mounted Basic Rifle
   Id: Arm_Stabby_1

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc93fd31ffc89848979555d286e73a7, type: 3}
   m_Name: MechPart_StHead_01
   m_EditorClassIdentifier: 
-  PartType: 1
+  PartType: 2
   Element: 1
   Tier: 1
   Name: Mounted Basic Rifle
