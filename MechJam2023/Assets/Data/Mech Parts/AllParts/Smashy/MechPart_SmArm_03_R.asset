@@ -18,4 +18,4 @@ MonoBehaviour:
   Name: Mounted Basic Rifle
   Id: Arm_Smashy_3
   Image: {fileID: 21300000, guid: 50acb9d6e8b8ebd4088ba0b9710d05ae, type: 3}
-  Prefab: {fileID: 3753640520313859827, guid: 0dc608058f0acad43a8f06ebf1b1e295, type: 3}
+  Prefab: {fileID: 1958990406150776933, guid: e70e42d1c5076cf4c8ce3e0764173e3b, type: 3}

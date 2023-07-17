@@ -18,4 +18,4 @@ MonoBehaviour:
   Name: Mounted Basic Rifle
   Id: Leg_Stabby_01_L
   Image: {fileID: 21300000, guid: 50acb9d6e8b8ebd4088ba0b9710d05ae, type: 3}
-  Prefab: {fileID: 3753640520313859827, guid: 48e6174daed803942a3f68f19b65ce3d, type: 3}
+  Prefab: {fileID: 1958990406150776933, guid: 3fb9ab9e64f002a4b864e4473f1558a3, type: 3}
