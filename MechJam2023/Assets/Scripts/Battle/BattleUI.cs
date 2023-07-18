@@ -79,9 +79,12 @@ namespace MechJam {
             Debug.LogWarning($"Selected {System.Enum.GetName(typeof(Mech.AttackPart), i + 1)}");
             ActionButtons[i].Select();
             selectedWeapon = i + 1;
+
             Targets.alpha = 1;
             Targets.interactable = true;
             Targets.blocksRaycasts = true;
+
+            AudioController.Instance.PlaySFX(AudioController.AudioKeys.SFX_UI_Select);
         }
 
         private void UseTargetButton(int currentButton)
@@ -95,6 +98,7 @@ namespace MechJam {
             {
                 Debug.LogWarning($"Target {System.Enum.GetName(typeof(Mech.AttackPart), currentButton)}");
                 selectedTarget = currentButton;
+                AudioController.Instance.PlaySFX(AudioController.AudioKeys.SFX_UI_Select);
                 //TODO: UI Tooltip kinda element hopefully
             }
         }
@@ -127,6 +131,7 @@ namespace MechJam {
                 MechPartHPBar.gameObject.SetActive(true);
                 MechPartHPBar.fillAmount = (float)part.Durability / part.MaxDurability;
                 MechPartStatsText.text = $"{(mech.IsPlayer ? "Player" : "Enemy")} Attack: {part.Attack}\n{(mech.IsPlayer ? "Player" : "Enemy")} Defense: {part.Defense}";
+                AudioController.Instance.PlaySFX(AudioController.AudioKeys.SFX_UI_Move);
             }
             else
             {

@@ -74,6 +74,7 @@ namespace MechJam {
             var attack = DetermineAttackValue(weapon);
             opponent.GetHit(attack, weapon, target);
             battleController.OnMechAttacks?.Invoke(this);
+            AudioController.Instance.PlaySFX(AudioController.AudioKeys.SFX_UI_Confirm);
             return true;
         }
         public bool Attack(AttackPart weapon, Mech opponent, AttackPart target)

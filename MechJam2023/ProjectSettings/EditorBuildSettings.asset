@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/01-MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/02-Scavenging.unity
-    guid: a29c92ea8b05fe24c9d8f9dc9edcf565
-  - enabled: 1
     path: Assets/Scenes/03-Battle.unity
     guid: 9007d66ce5d45bf4a97fbc5696b3ff91
+  - enabled: 1
+    path: Assets/Scenes/02-Scavenging.unity
+    guid: a29c92ea8b05fe24c9d8f9dc9edcf565
   - enabled: 1
     path: Assets/Scenes/0x-Inventory.unity
     guid: 730bd4c632201b646a2061b04c2ff2cd
