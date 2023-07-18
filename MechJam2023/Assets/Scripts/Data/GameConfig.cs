@@ -16,5 +16,7 @@ namespace MechJam
         public PartCollection RightArms;
         public PartCollection LeftLegs;
         public PartCollection RightLegs;
+
+        public int SelectedDifficulty; // 0,1,2: Easy,Medium,Hard
     }
 }

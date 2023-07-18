@@ -19,3 +19,4 @@ MonoBehaviour:
   RightArms: {fileID: 11400000, guid: e0a73641a84bd18438cfd16f30cb55f5, type: 2}
   LeftLegs: {fileID: 11400000, guid: c149ae00fc78ad346b02bcaf54826144, type: 2}
   RightLegs: {fileID: 11400000, guid: 8bd3b5e1670a2a74daa24e0cae9c2d1b, type: 2}
+  SelectedDifficulty: 1

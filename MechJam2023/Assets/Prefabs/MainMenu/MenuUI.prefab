@@ -117,10 +117,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375767a3e281a3e4e917e88d4553c8d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Config: {fileID: 11400000, guid: 4a0499d08525d4f409e8999b78c0e1b3, type: 2}
   StartButton: {fileID: 6576901872402475993}
   DifficultyButton: {fileID: 2331418934085096461}
   CreditsButton: {fileID: 1837546619701114242}
   CloseCreditsButton: {fileID: 5309936451331494285}
+  DifficultyText: {fileID: 8514657486832748381}
   CreditsPanel: {fileID: 4318997025266210380}
 --- !u!1 &4022888540389779889
 GameObject:
@@ -558,9 +560,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6365907475411212389}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &6507070430792249476
 GameObject:
@@ -628,7 +630,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " Antony Churchill <pos=50%>- Code\n Shivani Rambaran <pos=50%>- Design,
+  m_text: " Shivani Rambaran <pos=50%>- Design, Code\n Antony Churchill <pos=50%>-
     Code\n Harvey Newbigin <pos=50%>- Character Art\n Jerreau Henry <pos=50%>- Audio\n
     Jase Andrew Williams <pos=50%>- Art & Concepting\n"
   m_isRightToLeft: 0
@@ -900,6 +902,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3324654503784920596, guid: b631ceaef520da14ca7b8d263a513a0c, type: 3}
   m_PrefabInstance: {fileID: 1415401197664239043}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8514657486832748381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7317962627432921758, guid: b631ceaef520da14ca7b8d263a513a0c, type: 3}
+  m_PrefabInstance: {fileID: 1415401197664239043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3061911334593649740
 PrefabInstance:
   m_ObjectHideFlags: 0
