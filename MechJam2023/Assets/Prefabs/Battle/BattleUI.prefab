@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 6324874589634371280}
   - component: {fileID: 2718621157591504041}
   - component: {fileID: 7334750090367479268}
+  - component: {fileID: 9203381873582625430}
   m_Layer: 0
   m_Name: ActionGrid
   m_TagString: Untagged
@@ -394,6 +395,18 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!225 &9203381873582625430
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3061645524593347454}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3216663630268051997
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,7 +656,7 @@ RectTransform:
   - {fileID: 6115021574578922331}
   - {fileID: 3596222514050296528}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -708,6 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d16c7e870e6fa4ea1522383b28dda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Actions: {fileID: 9203381873582625430}
   ActionButtons:
   - {fileID: 6703516950350719907}
   - {fileID: 2545937554792786627}

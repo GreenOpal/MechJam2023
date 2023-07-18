@@ -7,6 +7,7 @@ using TMPro;
 namespace MechJam {
     public class BattleUI : BattleConfigurableBehaviour
     {
+        [SerializeField] private CanvasGroup Actions;
         [SerializeField] private Button[] ActionButtons;
         [SerializeField] private Button Back;
         [SerializeField] private CanvasGroup Targets;
@@ -50,6 +51,9 @@ namespace MechJam {
 
         private void DetermineAttackStatus(Mech mech, MechPart part)
         {
+            Actions.alpha = mech.IsPlayer ? 1 : 0;
+            Actions.blocksRaycasts = mech.IsPlayer;
+            Actions.interactable = mech.IsPlayer;
             UpdatePlayerHealth();
         }
 
@@ -57,6 +61,17 @@ namespace MechJam {
         {
             PlayerHPBar.fillAmount = _battleController.PlayerMech.CurrentHealth;
             EnemyHPBar.fillAmount = _battleController.EnemyMech.CurrentHealth;
+
+            for (int i = 0; i < ActionButtons.Length; i++)
+            {
+                var attackPart = (Mech.AttackPart)i;
+                ActionButtons[i].interactable = _battleController.PlayerMech.PartMap[attackPart].Durability > 0;
+            }
+            for (int i = 0; i < TargetButtons.Length; i++)
+            {
+                var attackPart = (Mech.AttackPart)i;
+                TargetButtons[i].interactable = _battleController.EnemyMech.PartMap[attackPart].Durability > 0;
+            }
         }
 
         private void UseAttackButton( int i )
@@ -65,6 +80,8 @@ namespace MechJam {
             ActionButtons[i].Select();
             selectedWeapon = i + 1;
             Targets.alpha = 1;
+            Targets.interactable = true;
+            Targets.blocksRaycasts = true;
         }
 
         private void UseTargetButton(int currentButton)
@@ -87,12 +104,16 @@ namespace MechJam {
             selectedWeapon = 0;
             selectedTarget = 0;
             Targets.alpha = 0;
+            Targets.interactable = false;
+            Targets.blocksRaycasts = false;
         }
 
         private void StartAttack()
         {
-            _battleController.PlayerMech.Attack((Mech.AttackPart)selectedWeapon, _battleController.EnemyMech, (Mech.AttackPart)selectedTarget);
-            OnBack();
+            if (_battleController.PlayerMech.Attack((Mech.AttackPart)selectedWeapon, _battleController.EnemyMech, (Mech.AttackPart)selectedTarget))
+            {
+                OnBack();
+            }
         }
 
         private void ShowMechPartStats(Button button, Mech mech)

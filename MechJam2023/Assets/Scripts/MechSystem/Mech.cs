@@ -68,15 +68,23 @@ namespace MechJam {
 
         }
 
-        public void Attack(MechPart weapon, Mech opponent, AttackPart target)
+        public bool Attack(MechPart weapon, Mech opponent, AttackPart target)
         {
+            if (!CanAttack(weapon, opponent, target)) return false;
             var attack = DetermineAttackValue(weapon);
             opponent.GetHit(attack, weapon, target);
             battleController.OnMechAttacks?.Invoke(this);
+            return true;
         }
-        public void Attack(AttackPart weapon, Mech opponent, AttackPart target)
+        public bool Attack(AttackPart weapon, Mech opponent, AttackPart target)
         {
-            Attack(PartMap[weapon], opponent, target);
+            return Attack(PartMap[weapon], opponent, target);
+        }
+
+        public bool CanAttack(MechPart weapon, Mech opponent, AttackPart target)
+        {
+            return weapon.Durability > 0
+                && opponent.PartMap[target].Durability > 0;
         }
 
         public void GetHit(int attack, MechPart weapon, AttackPart target)
