@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] private Button DifficultyButton;
     [SerializeField] private Button CreditsButton;
     [SerializeField] private Button CloseCreditsButton;
+    [SerializeField] private CanvasGroup CreditsPanel;
     private void Awake()
     {
         StartButton.onClick.AddListener(StartGame);
