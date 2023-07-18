@@ -23,21 +23,30 @@ namespace MechJam {
         public override void Initialize(GameControllerBase controller)
         {
             base.Initialize(controller);
+
             for (int i = 0; i < ActionButtons.Length; i++)
             {
                 var currentButton = i;
-                ActionButtons[i].onClick.AddListener( () => UseAttackButton(currentButton) );
+                ActionButtons[i].onClick.AddListener(() => UseAttackButton(currentButton));
+
+                var eventTrigger = ActionButtons[i].gameObject.AddComponent<EventTrigger>();
+                AddEventTriggerListener(eventTrigger, EventTriggerType.PointerEnter, (data) => ShowMechPartStats(ActionButtons[currentButton], _battleController.PlayerMech));
+                AddEventTriggerListener(eventTrigger, EventTriggerType.PointerExit, HideMechPartStats);
             }
+
             for (int i = 0; i < TargetButtons.Length; i++)
             {
                 var currentButton = i;
                 TargetButtons[i].onClick.AddListener(() => UseTargetButton(currentButton));
+
                 var eventTrigger = TargetButtons[i].gameObject.AddComponent<EventTrigger>();
-                AddEventTriggerListener(eventTrigger, EventTriggerType.PointerEnter, (data) => ShowMechPartStats(TargetButtons[currentButton]));
+                AddEventTriggerListener(eventTrigger, EventTriggerType.PointerEnter, (data) => ShowMechPartStats(TargetButtons[currentButton], _battleController.EnemyMech));
                 AddEventTriggerListener(eventTrigger, EventTriggerType.PointerExit, HideMechPartStats);
             }
+
             _battleController.OnMechWasAttacked += DetermineAttackStatus;
         }
+
 
         private void DetermineAttackStatus(Mech mech, MechPart part)
         {
@@ -86,23 +95,29 @@ namespace MechJam {
             OnBack();
         }
 
-        private void ShowMechPartStats(Button button)
+        private void ShowMechPartStats(Button button, Mech mech)
         {
+            int index = mech.IsPlayer ? button.transform.GetSiblingIndex() : button.transform.GetSiblingIndex() - 1;
+
             MechPart part;
-            if (_battleController.PlayerMech.IsPlayer)
+            if (mech.PartMap.TryGetValue((Mech.AttackPart)index, out part))
             {
-                part = _battleController.PlayerMech.PartMap[(Mech.AttackPart)(button.transform.GetSiblingIndex() - 1)];
+                MechPartHPBar.transform.parent.gameObject.SetActive(true);
+                MechPartHPBar.gameObject.SetActive(true);
+                MechPartHPBar.fillAmount = (float)part.Durability / part.MaxDurability;
+                MechPartStatsText.text = $"{(mech.IsPlayer ? "Player" : "Enemy")} Attack: {part.Attack}\n{(mech.IsPlayer ? "Player" : "Enemy")} Defense: {part.Defense}";
             }
             else
             {
-                part = _battleController.EnemyMech.PartMap[(Mech.AttackPart)(button.transform.GetSiblingIndex() - 1)];
+                MechPartHPBar.transform.parent.gameObject.SetActive(false);
+                MechPartHPBar.gameObject.SetActive(false);
+                MechPartStatsText.text = string.Empty;
             }
-
-            MechPartHPBar.transform.parent.gameObject.SetActive(true);
-            MechPartHPBar.gameObject.SetActive(true);
-            MechPartHPBar.fillAmount = (float)part.Durability / part.MaxDurability;
-            MechPartStatsText.text = $"Attack: {part.Attack}\nDefense: {part.Defense}";
         }
+
+
+
+
 
 
         private void HideMechPartStats(BaseEventData eventData)
