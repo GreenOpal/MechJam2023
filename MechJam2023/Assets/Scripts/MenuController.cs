@@ -5,6 +5,9 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     [SerializeField] private Button StartButton;
+    [SerializeField] private Button DifficultyButton;
+    [SerializeField] private Button CreditsButton;
+    [SerializeField] private Button CloseCreditsButton;
     private void Awake()
     {
         StartButton.onClick.AddListener(StartGame);
