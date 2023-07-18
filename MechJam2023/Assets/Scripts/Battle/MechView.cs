@@ -47,9 +47,9 @@ namespace MechJam
         {
             mechVfxController.ShowAttackVfx();
         }
-        public void GetHit()
+        public void GetHit(int damage)
         {
-            mechVfxController.ShowHitVfx();
+            mechVfxController.ShowHitVfx(damage);
         }
     }
 }

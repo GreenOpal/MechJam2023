@@ -19,7 +19,7 @@ namespace MechJam
         public Action<Mech> OnMechAssigned;
 
         public Action<Mech> OnMechAttacks;
-        public Action<Mech,MechPart> OnMechWasAttacked;
+        public Action<Mech,MechPart,int> OnMechWasAttacked;
         #endregion
 
         #region Methods

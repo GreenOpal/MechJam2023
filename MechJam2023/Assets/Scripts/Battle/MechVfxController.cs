@@ -21,9 +21,10 @@ namespace MechJam
         }
 
         [ContextMenu("Test Hit")]
-        public void ShowHitVfx()
+        public void ShowHitVfx(int damage)
         {
-            _TweenTarget.DOShakePosition(1f,vibrato:6);
+            int vibrato = Mathf.FloorToInt(Mathf.Lerp(3, 12, Mathf.InverseLerp(0, 50, damage)));
+            _TweenTarget.DOShakePosition(1f,vibrato: vibrato);
         }
     }
 }

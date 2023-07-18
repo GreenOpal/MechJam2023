@@ -33,15 +33,15 @@ namespace MechJam
             }
         }
 
-        private void DisplayGetHit(Mech mech, MechPart _)
+        private void DisplayGetHit(Mech mech, MechPart _, int damage)
         {
             if (mech.IsPlayer)
             {
-                _playerView.GetHit();
+                _playerView.GetHit(damage);
             }
             else
             {
-                _enemyView.GetHit();
+                _enemyView.GetHit(damage);
             }
         }
 

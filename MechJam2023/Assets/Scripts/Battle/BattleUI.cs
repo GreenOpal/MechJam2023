@@ -49,7 +49,7 @@ namespace MechJam {
         }
 
 
-        private void DetermineAttackStatus(Mech mech, MechPart part)
+        private void DetermineAttackStatus(Mech mech, MechPart part, int _)
         {
             Actions.alpha = mech.IsPlayer ? 1 : 0;
             Actions.blocksRaycasts = mech.IsPlayer;

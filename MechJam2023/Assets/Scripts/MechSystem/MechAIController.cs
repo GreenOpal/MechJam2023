@@ -22,12 +22,12 @@ namespace MechJam
 
             StartCoroutine(QueueEnemyAttack(mech));
         }
-        private IEnumerator QueueEnemyAttack(Mech mech)
+        private IEnumerator QueueEnemyAttack(Mech _)
         {
             preparingAttack = true;
 
             yield return new WaitForSeconds(enemyAttackDelay);
-            mech.DetermineAIAttack(_battleController.PlayerMech);
+            _battleController.EnemyMech.DetermineAIAttack(_battleController.PlayerMech);
             preparingAttack = false;
         }
 

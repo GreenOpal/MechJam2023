@@ -96,7 +96,7 @@ namespace MechJam {
             PartMap[target] = targetPart;
             Debug.Log($"Part {targetPart.data.Name} ({targetPart.data.Element}) takes {damageTaken} damage!");
             CheckPartDurability(PartMap[target]);
-            battleController.OnMechWasAttacked?.Invoke(this, weapon);
+            battleController.OnMechWasAttacked?.Invoke(this, weapon, damageTaken);
         }
 
         private void CheckPartDurability(MechPart mechPart)
@@ -131,7 +131,6 @@ namespace MechJam {
             var damage = ElementHelper.GetElementEffect(weapon.data.Element, target.data.Element) * baseDamage;
             float defenseFactor = (1 - target.Defense / 100f);
             damage *= defenseFactor;
-            Debug.LogWarning("damaggio: " + damage);
             return Mathf.Max( Mathf.FloorToInt(damage), 1);
         }
 
