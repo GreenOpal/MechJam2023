@@ -10,13 +10,12 @@ namespace MechJam
         //Add Variables we want to expose/edit here
 
         public MechPartValues MechPartValues;
+        public DifficultySettings DifficultySettings;
 
         public PartCollection Heads;
         public PartCollection LeftArms;
         public PartCollection RightArms;
         public PartCollection LeftLegs;
         public PartCollection RightLegs;
-
-        public int SelectedDifficulty; // 0,1,2: Easy,Medium,Hard
     }
 }

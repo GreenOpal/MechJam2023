@@ -43,12 +43,12 @@ namespace MechJam {
 
         private void SetDifficulty()
         {
-            Config.SelectedDifficulty = (Config.SelectedDifficulty + 1) % 3;
+            Config.DifficultySettings.SelectedDifficulty = (Config.DifficultySettings.SelectedDifficulty + 1) % 3;
             DisplayDifficulty();
         }
         private void DisplayDifficulty ()
         {
-            switch (Config.SelectedDifficulty)
+            switch (Config.DifficultySettings.SelectedDifficulty)
             {
                 case 0:
                     DifficultyText.SetText(DifficultyBase + DifficultyEasy);
