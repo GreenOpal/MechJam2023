@@ -1038,11 +1038,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2204566051186091161}
   - {fileID: 5789849444541762891}
   - {fileID: 4249419465402453972}
   - {fileID: 6760805341427150850}
   - {fileID: 7864375614293782431}
+  - {fileID: 2204566051186091161}
   m_Father: {fileID: 2153704339678461499}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1464,7 +1464,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Name
-      value: ActionButton
+      value: Target_LeftArm
       objectReference: {fileID: 0}
     - target: {fileID: 4803720695240717536, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Pivot.x
@@ -1589,7 +1589,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Name
-      value: ActionButton (2)
+      value: Target_LeftLeg
       objectReference: {fileID: 0}
     - target: {fileID: 4803720695240717536, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Pivot.x
@@ -1714,7 +1714,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Name
-      value: ActionButton (3)
+      value: Target_RightLeg
       objectReference: {fileID: 0}
     - target: {fileID: 4803720695240717536, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Pivot.x
@@ -1839,7 +1839,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Name
-      value: ActionButton
+      value: Action_LeftArm
       objectReference: {fileID: 0}
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_IsActive
@@ -1984,7 +1984,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Name
-      value: ActionButton (1)
+      value: Action_RightArm
       objectReference: {fileID: 0}
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_IsActive
@@ -2113,7 +2113,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Name
-      value: ActionButton (4)
+      value: Target_Head
       objectReference: {fileID: 0}
     - target: {fileID: 4803720695240717536, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Pivot.x
@@ -2238,7 +2238,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Name
-      value: ActionButton (2)
+      value: Action_LeftLeg
       objectReference: {fileID: 0}
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_IsActive
@@ -2367,7 +2367,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Name
-      value: ActionButton (3)
+      value: Action_RightLeg
       objectReference: {fileID: 0}
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_IsActive
@@ -2621,7 +2621,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236965110109675261, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Name
-      value: ActionButton (1)
+      value: Target_RightArm
       objectReference: {fileID: 0}
     - target: {fileID: 4803720695240717536, guid: 59b3c9a4d2e37c945befaee7c0beaa26, type: 3}
       propertyPath: m_Pivot.x

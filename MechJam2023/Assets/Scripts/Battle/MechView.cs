@@ -30,17 +30,38 @@ namespace MechJam
             }
             _activeMechParts.Clear();
             MechName = mech.Name;
-            PositionMechPart(mech.PartMap[Parts.Head], _headLocation);
-            PositionMechPart(mech.PartMap[Parts.LeftArm], _leftArmLocation);
-            PositionMechPart(mech.PartMap[Parts.RightArm], _rightArmLocation);
-            PositionMechPart(mech.PartMap[Parts.LeftLeg], _leftLegLocation);
-            PositionMechPart(mech.PartMap[Parts.RightLeg], _rightLegLocation);
+            PositionMechPart(Parts.Head, _headLocation);
+            PositionMechPart(Parts.LeftArm, _leftArmLocation);
+            PositionMechPart(Parts.RightArm, _rightArmLocation);
+            PositionMechPart(Parts.LeftLeg, _leftLegLocation);
+            PositionMechPart(Parts.RightLeg, _rightLegLocation);
         }
 
-        private void PositionMechPart(MechPart part, Transform location)
+        private void PositionMechPart(Parts part, Transform location)
         {
-            var newPart = Instantiate(part.data.Prefab, location);
+            var mechPart = mech.PartMap[part];
+            var newPart = Instantiate(mechPart.data.Prefab, location);
             newPart.transform.Translate(-newPart.PivotPoint.localPosition);
+            var spriteRenderer = newPart.GetComponentInChildren<SpriteRenderer>();
+            
+            switch (part)
+            {
+                case Parts.LeftArm:
+                    spriteRenderer.sortingOrder = 3;
+                    break;
+                case Parts.LeftLeg:
+                    spriteRenderer.sortingOrder = 2;
+                    break;
+                case Parts.Head:
+                    spriteRenderer.sortingOrder = 1;
+                    break;
+                case Parts.RightLeg:
+                    spriteRenderer.sortingOrder = -1;
+                    break;
+                case Parts.RightArm:
+                    spriteRenderer.sortingOrder = -2;
+                    break;
+            }
         }
 
         public void Attack()
