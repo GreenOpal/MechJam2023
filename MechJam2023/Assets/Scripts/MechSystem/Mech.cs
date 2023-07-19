@@ -103,32 +103,61 @@ namespace MechJam {
         {
             int damageTaken = DetermineDamageTaken(attack, weapon, PartMap[target]);
             var targetPart = PartMap[target];
-            targetPart.Durability -= damageTaken;
-            PartMap[target] = targetPart;
+            if (damageTaken >= targetPart.Durability)
+            {
+                targetPart.Durability = 0;
+                PartMap[target] = targetPart;
+                battleController.OnPartDestroyed?.Invoke(this, targetPart);
+                if (IsMechDestroyed())
+                {
+                    battleController.OnMechDestroyed?.Invoke(this);
+                    return;
+                };
+            } else
+            {
+                targetPart.Durability -= damageTaken;
+                PartMap[target] = targetPart;
+            }
+
+            
             Debug.Log($"Part {targetPart.data.Name} ({targetPart.data.Element}) takes {damageTaken} damage!");
-            CheckPartDurability(PartMap[target]);
+            MechReport();
             battleController.OnMechWasAttacked?.Invoke(this, weapon, damageTaken);
         }
 
-        private void CheckPartDurability(MechPart mechPart)
+        private bool IsMechDestroyed()
         {
-            if (mechPart.Durability <= 0)
+
+            foreach (var part in PartMap.Values)
             {
-                mechPart.Durability = 0;
-                battleController.OnPartDestroyed?.Invoke(this, mechPart);
+                if (part.Durability > 0)
+                {
+                    return false;
+                }
             }
-            MechReport();
+            Debug.LogWarning("BOOM");
+            return true;
+            
         }
 
         public void DetermineAIAttack(Mech opponent)
         {
             var availableWeapons = PartMap.Values.Where(part => part.Durability > 0 && part.data.PartType != PartType.Head).ToArray();
+            if (availableWeapons.Length == 0)
+            {
+                PassAttack();
+            }
             var weapon = availableWeapons[UnityEngine.Random.Range(0, availableWeapons.Length)];
 
             var availableTargets = opponent.PartMap.Where(part => part.Value.Durability > 0).ToArray();
             var target = availableTargets[UnityEngine.Random.Range(0, availableTargets.Length)];
             // To be refined
             Attack(weapon, opponent, target.Key);
+        }
+
+        private void PassAttack()
+        {
+            //TODO: Find a way to implement this if only the head is left
         }
 
         //Mech Calculation stuff - could be moved to some helper/battle controller class

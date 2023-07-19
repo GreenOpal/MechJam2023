@@ -9,7 +9,6 @@ namespace MechJam {
     {
         [SerializeField] private CanvasGroup Actions;
         [SerializeField] private Button[] ActionButtons;
-        [SerializeField] private Button Back;
         [SerializeField] private CanvasGroup Targets;
         [SerializeField] private Button[] TargetButtons;
 
@@ -22,6 +21,11 @@ namespace MechJam {
         [SerializeField] private Button QuitButton;
         [SerializeField] private Button QuitCancelButton;
 
+        [SerializeField] private GameObject EndGamePanel;
+        [SerializeField] private TMP_Text EndGameText;
+        [SerializeField] private Button EndGameButton;
+        [SerializeField] private string WinText = "YOU WIN!!!";
+        [SerializeField] private string LoseText = "YOU LOSE...";
 
         private int selectedWeapon;
         private int selectedTarget;
@@ -57,9 +61,22 @@ namespace MechJam {
             _input.Player.Enable();
             _input.Player.Cancel.performed += ShowQuitMenu;
 
+            EndGameButton.onClick.AddListener(Quit);
+
 
             _battleController.OnMechWasAttacked += DetermineAttackStatus;
             _battleController.OnPartDestroyed += ShowDestroyedPart;
+            _battleController.OnMechDestroyed += ShowEndScreen;
+
+            SetTargetPanelState(false);
+            EndGamePanel.SetActive(false);
+            QuitPanel.SetActive(false);
+        }
+
+        private void ShowEndScreen(Mech mech)
+        {
+            EndGameText.SetText(mech.IsPlayer ? LoseText : WinText);
+            EndGamePanel.SetActive(true);
         }
 
         private void ShowDestroyedPart(Mech arg1, MechPart arg2)
@@ -91,6 +108,12 @@ namespace MechJam {
         {
             QuitPanel.SetActive(!QuitPanel.activeSelf);
         }
+        private void SetTargetPanelState(bool state)
+        {
+            Targets.alpha = state? 1 : 0;
+            Targets.interactable = state;
+            Targets.blocksRaycasts = state;
+        }
 
         private void DetermineAttackStatus(Mech mech, MechPart part, int _)
         {
@@ -120,12 +143,9 @@ namespace MechJam {
         private void UseAttackButton( int i )
         {
             Debug.LogWarning($"Selected {System.Enum.GetName(typeof(Mech.AttackPart), i + 1)}");
-            ActionButtons[i].Select();
             selectedWeapon = i + 1;
+            SetTargetPanelState(true);
 
-            Targets.alpha = 1;
-            Targets.interactable = true;
-            Targets.blocksRaycasts = true;
 
             AudioController.Instance.PlaySFX(AudioController.AudioKeys.SFX_UI_Select);
         }
@@ -150,9 +170,7 @@ namespace MechJam {
         {
             selectedWeapon = 0;
             selectedTarget = 0;
-            Targets.alpha = 0;
-            Targets.interactable = false;
-            Targets.blocksRaycasts = false;
+            SetTargetPanelState(false);
         }
 
         private void StartAttack()
