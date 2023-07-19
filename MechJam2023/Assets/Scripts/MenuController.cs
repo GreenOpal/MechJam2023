@@ -37,6 +37,7 @@ namespace MechJam {
             {
                 yield return null;
             }
+            yield return new WaitForEndOfFrame();
             AudioController.Instance.PlayMusic(AudioController.AudioKeys.Music_Title);
         }
 
