@@ -825,6 +825,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5860581596769439884, guid: 32a7678982c3c4c459a4be0f71349e76, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5905639317427329906, guid: 32a7678982c3c4c459a4be0f71349e76, type: 3}
       propertyPath: _enemyView
       value: 
@@ -852,6 +856,10 @@ PrefabInstance:
     - target: {fileID: 8680346958425511434, guid: 32a7678982c3c4c459a4be0f71349e76, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 54.990997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988358175082977610, guid: 32a7678982c3c4c459a4be0f71349e76, type: 3}
+      propertyPath: m_FillOrigin
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
