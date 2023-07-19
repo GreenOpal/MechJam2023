@@ -362,9 +362,133 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 314569773443902040, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314569773443902040, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314569773443902040, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314569773443902040, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314569773443902040, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314569773443902040, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 951710447649486985, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_fontSize
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 951710447649486985, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_margin.w
+      value: -7.540924
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348408530728937579, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_Spacing
+      value: 6.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348408530728937579, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348408530728937579, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_Padding.m_Bottom
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348408530728937579, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936838016025970987, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 429.7356
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936838016025970987, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 211.7403
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936838016025970987, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 90.63
+      objectReference: {fileID: 0}
     - target: {fileID: 3647684903328905341, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
       propertyPath: m_Name
       value: MenuUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433521480318372823, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433521480318372823, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433521480318372823, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433521480318372823, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433521480318372823, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433521480318372823, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684461976762405347, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 189.6411
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684461976762405347, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 187.1035
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684461976762405347, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -16.3454
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684461976762405347, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -93.552
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086829011197588483, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086829011197588483, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086829011197588483, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086829011197588483, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086829011197588483, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086829011197588483, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7203249360591555202, guid: 443ee85f858ad0b49bfdd2ad884fdca0, type: 3}
       propertyPath: m_Pivot.x
