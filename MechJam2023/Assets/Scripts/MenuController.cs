@@ -16,7 +16,7 @@ namespace MechJam {
         [SerializeField] private Button QuitButton;
         [SerializeField] private TMP_Text DifficultyText;
         [SerializeField] private CanvasGroup CreditsPanel;
-        private string DifficultyBase = "Difficulty\n";
+        private string DifficultyBase = "Difficulty: ";
         private string DifficultyEasy = "Easy";
         private string DifficultyMedium = "Medium";
         private string DifficultyHard = "Hard";
