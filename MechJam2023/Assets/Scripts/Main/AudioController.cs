@@ -12,7 +12,18 @@ public class AudioController : SingletonMonoBehaviour<AudioController>
         SFX_UI_Back,
         SFX_UI_Confirm,
         SFX_UI_Select,
-        SFX_UI_Move
+        SFX_UI_Move,
+        SFX_Attack_Stabby,
+        SFX_Attack_Shooty,
+        SFX_Attack_Smashy,
+        SFX_Ambience_Cheer,
+        SFX_Ambience_Boo,
+        SFX_Ambience_Laugh,
+        Music_Title,
+        Music_Scavenge,
+        Music_Battle,
+        Music_Boss
+
     }
     [System.Serializable]
     public struct AudioItem

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,16 @@ namespace MechJam {
             CreditsButton.onClick.AddListener(ShowCredits);
             CloseCreditsButton.onClick.AddListener(HideCredits);
             DisplayDifficulty();
+            StartCoroutine(PlayMusicWhenReady());
+        }
+
+        private IEnumerator PlayMusicWhenReady()
+        {
+            while(AudioController.HasInstance == false)
+            {
+                yield return null;
+            }
+            AudioController.Instance.PlayMusic(AudioController.AudioKeys.Music_Title);
         }
 
         private void ShowCredits()

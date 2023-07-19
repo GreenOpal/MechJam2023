@@ -41,6 +41,9 @@ namespace MechJam
             var enemyMechParts = GetMechOfStrength(Config.DifficultySettings.GetDifficulty(Config.DifficultySettings.SelectedDifficulty, false));
             EnemyMech.Setup(this, false, "EnemyMech",enemyMechParts);
             OnMechAssigned.Invoke(EnemyMech);
+
+            AudioController.Instance.PlayMusic(AudioController.AudioKeys.Music_Battle);
+
         }
 
         (MechPart, MechPart, MechPart, MechPart, MechPart ) GetRandomMech()
