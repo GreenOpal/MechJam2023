@@ -130,12 +130,11 @@ namespace MechJam {
 
             foreach (var part in PartMap.Values)
             {
-                if (part.Durability > 0)
+                if (part.Durability > 0 && part.data.PartType != PartType.Head)
                 {
                     return false;
                 }
             }
-            Debug.LogWarning("BOOM");
             return true;
             
         }
@@ -146,6 +145,7 @@ namespace MechJam {
             if (availableWeapons.Length == 0)
             {
                 PassAttack();
+                return;
             }
             var weapon = availableWeapons[UnityEngine.Random.Range(0, availableWeapons.Length)];
 
