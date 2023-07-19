@@ -59,6 +59,12 @@ namespace MechJam {
 
 
             _battleController.OnMechWasAttacked += DetermineAttackStatus;
+            _battleController.OnPartDestroyed += ShowDestroyedPart;
+        }
+
+        private void ShowDestroyedPart(Mech arg1, MechPart arg2)
+        {
+            //TODO: set button disabled/change colour
         }
 
         public override void DeInitialize()

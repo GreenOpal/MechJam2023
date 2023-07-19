@@ -115,6 +115,7 @@ namespace MechJam {
             if (mechPart.Durability <= 0)
             {
                 mechPart.Durability = 0;
+                battleController.OnPartDestroyed?.Invoke(this, mechPart);
             }
             MechReport();
         }

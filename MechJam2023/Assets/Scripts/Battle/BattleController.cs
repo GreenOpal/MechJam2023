@@ -20,7 +20,9 @@ namespace MechJam
 
         public Action<Mech> OnMechAttacks;
         public Action<Mech,MechPart,int> OnMechWasAttacked;
+        public Action<Mech, MechPart> OnPartDestroyed;
         PartCollection[] orderedParts;
+
         #endregion
 
         #region Methods

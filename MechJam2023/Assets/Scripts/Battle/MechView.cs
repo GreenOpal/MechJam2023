@@ -1,5 +1,7 @@
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Parts = MechJam.Mech.AttackPart;
 
@@ -16,7 +18,7 @@ namespace MechJam
         [SerializeField] private Transform _leftLegLocation;
         [SerializeField] private Transform _rightLegLocation;
 
-        private List<GameObject> _activeMechParts = new List<GameObject>();
+        private List<MechPartView> _activeMechParts = new List<MechPartView>();
         public string MechName;
 
         private Mech mech;
@@ -26,7 +28,7 @@ namespace MechJam
             this.mech = mech;
             foreach (var currentPart in _activeMechParts)
             {
-                Destroy(currentPart);
+                Destroy(currentPart.gameObject);
             }
             _activeMechParts.Clear();
             MechName = mech.Name;
@@ -37,29 +39,39 @@ namespace MechJam
             PositionMechPart(Parts.RightLeg, _rightLegLocation);
         }
 
+        public void DestroyPart(MechPart deadPart)
+        {
+            var deadPartView = _activeMechParts.FirstOrDefault((part) => part.Part.data.Id == deadPart.data.Id);
+            if (deadPartView != default)
+            {
+                deadPartView.ShowDestroyed();
+            }
+        }
+
         private void PositionMechPart(Parts part, Transform location)
         {
             var mechPart = mech.PartMap[part];
-            var newPart = Instantiate(mechPart.data.Prefab, location);
-            newPart.transform.Translate(-newPart.PivotPoint.localPosition);
-            var spriteRenderer = newPart.GetComponentInChildren<SpriteRenderer>();
+            var newPartView = Instantiate(mechPart.data.Prefab, location);
+            newPartView.transform.Translate(-newPartView.PivotPoint.localPosition);
+            newPartView.Part = mechPart;
+            _activeMechParts.Add(newPartView);
             
             switch (part)
             {
                 case Parts.LeftArm:
-                    spriteRenderer.sortingOrder = 3;
+                    newPartView.Sprite.sortingOrder = 3;
                     break;
                 case Parts.LeftLeg:
-                    spriteRenderer.sortingOrder = 2;
+                    newPartView.Sprite.sortingOrder = 2;
                     break;
                 case Parts.Head:
-                    spriteRenderer.sortingOrder = 1;
+                    newPartView.Sprite.sortingOrder = 1;
                     break;
                 case Parts.RightLeg:
-                    spriteRenderer.sortingOrder = -1;
+                    newPartView.Sprite.sortingOrder = -1;
                     break;
                 case Parts.RightArm:
-                    spriteRenderer.sortingOrder = -2;
+                    newPartView.Sprite.sortingOrder = -2;
                     break;
             }
         }

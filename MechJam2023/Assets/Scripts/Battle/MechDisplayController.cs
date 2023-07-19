@@ -20,6 +20,18 @@ namespace MechJam
 
             _battleController.OnMechAttacks += DisplayAttack;
             _battleController.OnMechWasAttacked += DisplayGetHit;
+            _battleController.OnPartDestroyed += ShowDestroyedPart;
+        }
+
+        private void ShowDestroyedPart(Mech mech, MechPart part)
+        {
+            if (mech.IsPlayer)
+            {
+                _playerView.DestroyPart(part);
+            } else
+            {
+                _enemyView.DestroyPart(part);
+            }
         }
 
         private void AssignMech(Mech mech)
