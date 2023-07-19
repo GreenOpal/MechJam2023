@@ -122,8 +122,7 @@ namespace MechJam {
 
         private void ShowMechPartStats(Button button, Mech mech)
         {
-            int index = mech.IsPlayer ? button.transform.GetSiblingIndex() : button.transform.GetSiblingIndex() - 1;
-
+            int index = button.transform.GetSiblingIndex();
             MechPart part;
             if (mech.PartMap.TryGetValue((Mech.AttackPart)index, out part))
             {

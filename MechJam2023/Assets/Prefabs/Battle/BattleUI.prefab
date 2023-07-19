@@ -675,7 +675,7 @@ RectTransform:
   - {fileID: 8382630023255547793}
   - {fileID: 4740957501541048577}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1038,11 +1038,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2204566051186091161}
   - {fileID: 5789849444541762891}
   - {fileID: 4249419465402453972}
   - {fileID: 6760805341427150850}
   - {fileID: 7864375614293782431}
-  - {fileID: 2204566051186091161}
   m_Father: {fileID: 2153704339678461499}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1097,9 +1097,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7744869201279666686}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &7783664987201236904
 GameObject:
