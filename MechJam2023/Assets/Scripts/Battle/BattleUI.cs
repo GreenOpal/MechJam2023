@@ -76,6 +76,7 @@ namespace MechJam {
         private void ShowEndScreen(Mech mech)
         {
             EndGameText.SetText(mech.IsPlayer ? LoseText : WinText);
+            AudioController.Instance.PlaySFX(mech.IsPlayer ? AudioController.AudioKeys.SFX_Ambience_Laugh: AudioController.AudioKeys.SFX_Ambience_Cheer);
             EndGamePanel.SetActive(true);
         }
 
