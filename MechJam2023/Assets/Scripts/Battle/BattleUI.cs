@@ -67,10 +67,57 @@ namespace MechJam {
             _battleController.OnMechWasAttacked += DetermineAttackStatus;
             _battleController.OnPartDestroyed += ShowDestroyedPart;
             _battleController.OnMechDestroyed += ShowEndScreen;
+            _battleController.OnMechAssigned += ColourActionButtons;
 
             SetTargetPanelState(false);
             EndGamePanel.SetActive(false);
             QuitPanel.SetActive(false);
+        }
+
+        [SerializeField] private Color ShootyColour;
+        [SerializeField] private Color StabbyColour;
+        [SerializeField] private Color SmashyColour;
+        private void ColourActionButtons(Mech mech)
+        {
+            if (mech.IsPlayer)
+            {
+                for (int i = 0; i < ActionButtons.Length; i++)
+                {
+                    var partType = (Mech.AttackPart)(i+1);
+                    var playerPart = mech.PartMap[partType];
+                    switch (playerPart.data.Element)
+                    {
+                        case Element.Shooty:
+                            ActionButtons[i].GetComponent<Image>().color = ShootyColour;
+                            break;
+                        case Element.Stabby:
+                            ActionButtons[i].GetComponent<Image>().color = StabbyColour;
+                            break;
+                        case Element.Smashy:
+                            ActionButtons[i].GetComponent<Image>().color = SmashyColour;
+                            break;
+                    }
+                }
+            } else
+            {
+                for (int i = 0; i < TargetButtons.Length; i++)
+                {
+                    var partType = (Mech.AttackPart)(i);
+                    var enemyPart = mech.PartMap[partType];
+                    switch (enemyPart.data.Element)
+                    {
+                        case Element.Shooty:
+                            TargetButtons[i].GetComponent<Image>().color = ShootyColour;
+                            break;
+                        case Element.Stabby:
+                            TargetButtons[i].GetComponent<Image>().color = StabbyColour;
+                            break;
+                        case Element.Smashy:
+                            TargetButtons[i].GetComponent<Image>().color = SmashyColour;
+                            break;
+                    }
+                }
+            }
         }
 
         private void ShowEndScreen(Mech mech)

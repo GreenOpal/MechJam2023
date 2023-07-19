@@ -767,6 +767,9 @@ MonoBehaviour:
   EndGameButton: {fileID: 3042251502204397991}
   WinText: YOU WIN!!!
   LoseText: YOU LOSE...
+  ShootyColour: {r: 1, g: 0.5019608, b: 0.69411767, a: 1}
+  StabbyColour: {r: 0.93725497, g: 0.9058824, b: 0.5921569, a: 1}
+  SmashyColour: {r: 0.6784314, g: 0.8862746, b: 0.72156864, a: 1}
 --- !u!114 &1159219050343636429
 MonoBehaviour:
   m_ObjectHideFlags: 0
