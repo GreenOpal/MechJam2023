@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ebd6e24ab9829044f8b1409c34cead99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4eb0e71a1908e6b479e0e42e83e438ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -111,7 +111,7 @@ RectTransform:
   - {fileID: 6208656863926876882}
   - {fileID: 4527813270332213175}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -738,7 +738,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 66.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -817,8 +817,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16.3454, y: -93.552}
-  m_SizeDelta: {x: 189.6411, y: 187.1035}
+  m_AnchoredPosition: {x: -7.958, y: -91.128}
+  m_SizeDelta: {x: 221.156, y: 182.2551}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1348408530728937579
 MonoBehaviour:
@@ -950,7 +950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7317962627432921758, guid: b631ceaef520da14ca7b8d263a513a0c, type: 3}
       propertyPath: m_fontSize
-      value: 14.6
+      value: 13.7
       objectReference: {fileID: 0}
     - target: {fileID: 7317962627432921758, guid: b631ceaef520da14ca7b8d263a513a0c, type: 3}
       propertyPath: m_sharedMaterial
