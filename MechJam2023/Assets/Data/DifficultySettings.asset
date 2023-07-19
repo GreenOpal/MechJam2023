@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aec11ae0bfd9e54bb3885a97791e4b0, type: 3}
   m_Name: DifficultySettings
   m_EditorClassIdentifier: 
-  SelectedDifficulty: 1
-  Ratio_Player_Easy: {x: 50, y: 30, z: 10}
+  SelectedDifficulty: 0
+  Ratio_Player_Easy: {x: 10, y: 30, z: 50}
   Ratio_Player_Medium: {x: 30, y: 40, z: 30}
-  Ratio_Player_Hard: {x: 10, y: 30, z: 50}
+  Ratio_Player_Hard: {x: 50, y: 30, z: 10}
   Ratio_Enemy_Easy: {x: 30, y: 40, z: 30}
   Ratio_Enemy_Medium: {x: 30, y: 40, z: 30}
   Ratio_Enemy_Hard: {x: 30, y: 40, z: 30}
