@@ -18,8 +18,14 @@ namespace MechJam {
         [SerializeField] public Image MechPartHPBar;
         [SerializeField] private TextMeshProUGUI MechPartStatsText;
 
+        [SerializeField] private GameObject QuitPanel;
+        [SerializeField] private Button QuitButton;
+        [SerializeField] private Button QuitCancelButton;
+
+
         private int selectedWeapon;
         private int selectedTarget;
+        private PlayerInput _input;
 
         public override void Initialize(GameControllerBase controller)
         {
@@ -44,10 +50,41 @@ namespace MechJam {
                 AddEventTriggerListener(eventTrigger, EventTriggerType.PointerEnter, (data) => ShowMechPartStats(TargetButtons[currentButton], _battleController.EnemyMech));
                 AddEventTriggerListener(eventTrigger, EventTriggerType.PointerExit, HideMechPartStats);
             }
+            QuitButton.onClick.AddListener(Quit);
+            QuitCancelButton.onClick.AddListener(CancelQuit);
+
+            _input = new PlayerInput();
+            _input.Player.Enable();
+            _input.Player.Cancel.performed += ShowQuitMenu;
+
 
             _battleController.OnMechWasAttacked += DetermineAttackStatus;
         }
 
+        public override void DeInitialize()
+        {
+            base.DeInitialize();
+            _battleController.OnMechWasAttacked -= DetermineAttackStatus;
+            _input.Player.Disable();
+            _input.Dispose();
+            _input.Player.Cancel.performed -= ShowQuitMenu;
+        }
+
+
+        private void Quit()
+        {
+            _controller.Quit();
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
+
+        private void CancelQuit()
+        {
+            QuitPanel.SetActive(false);
+        }
+        private void ShowQuitMenu(UnityEngine.InputSystem.InputAction.CallbackContext _)
+        {
+            QuitPanel.SetActive(!QuitPanel.activeSelf);
+        }
 
         private void DetermineAttackStatus(Mech mech, MechPart part, int _)
         {

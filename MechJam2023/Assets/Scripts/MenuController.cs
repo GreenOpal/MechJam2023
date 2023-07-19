@@ -13,6 +13,7 @@ namespace MechJam {
         [SerializeField] private Button DifficultyButton;
         [SerializeField] private Button CreditsButton;
         [SerializeField] private Button CloseCreditsButton;
+        [SerializeField] private Button QuitButton;
         [SerializeField] private TMP_Text DifficultyText;
         [SerializeField] private CanvasGroup CreditsPanel;
         private string DifficultyBase = "Difficulty\n";
@@ -25,6 +26,7 @@ namespace MechJam {
             DifficultyButton.onClick.AddListener(SetDifficulty);
             CreditsButton.onClick.AddListener(ShowCredits);
             CloseCreditsButton.onClick.AddListener(HideCredits);
+            QuitButton.onClick.AddListener(() => Application.Quit());
             DisplayDifficulty();
             StartCoroutine(PlayMusicWhenReady());
         }
