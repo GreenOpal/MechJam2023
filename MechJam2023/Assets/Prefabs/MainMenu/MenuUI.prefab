@@ -573,7 +573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4527813270332213175
 RectTransform:
   m_ObjectHideFlags: 0
@@ -618,15 +618,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.79915464, g: 0.2599235, b: 0.9339623, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 2a0b618e7190def46801d078849bd7b3, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -643,7 +643,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6365907475411212389}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -714,8 +714,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: " Shivani Rambaran <pos=50%>- Design, Code\n Antony Churchill <pos=50%>-
-    Code\n Harvey Newbigin <pos=50%>- Character Art\n Jerreau Henry <pos=50%>- Audio\n
-    Jase Andrew Williams <pos=50%>- Art & Concepting\n"
+    Code\n Harvey Newbigin <pos=50%>- Character Art\n Jerreau Henry <pos=50%>- Composer
+    & Co-producer\n Jase Andrew Williams <pos=50%>- Art & Concepting\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79fdc30709e2d3d4b9f8fc43f1ce789f, type: 2}
   m_sharedMaterial: {fileID: -4894671127923123247, guid: 79fdc30709e2d3d4b9f8fc43f1ce789f, type: 2}
@@ -742,12 +742,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 64
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 64
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512

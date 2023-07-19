@@ -36,16 +36,6 @@ namespace MechJam {
             StartCoroutine(PlayMusicWhenReady());
         }
 
-        private void HideTutorial()
-        {
-            TutorialPanel.SetActive(false);
-        }
-
-        private void ShowTutorial()
-        {
-            TutorialPanel.SetActive(true);
-        }
-
         private IEnumerator PlayMusicWhenReady()
         {
             while(AudioController.HasInstance == false)
@@ -61,6 +51,7 @@ namespace MechJam {
             CreditsPanel.alpha = 1;
             CreditsPanel.interactable = true;
             CreditsPanel.blocksRaycasts = true;
+            AudioController.Instance.PlayMusic(AudioController.AudioKeys.Music_Scavenge);
         }
 
         private void HideCredits()
@@ -68,6 +59,18 @@ namespace MechJam {
             CreditsPanel.alpha = 0;
             CreditsPanel.interactable = false;
             CreditsPanel.blocksRaycasts = false;
+            AudioController.Instance.PlayMusic(AudioController.AudioKeys.Music_Title);
+        }
+        private void ShowTutorial()
+        {
+            TutorialPanel.SetActive(true);
+            AudioController.Instance.PlayMusic(AudioController.AudioKeys.Music_Scavenge);
+        }
+
+        private void HideTutorial()
+        {
+            TutorialPanel.SetActive(false);
+            AudioController.Instance.PlayMusic(AudioController.AudioKeys.Music_Title);
         }
 
         private void SetDifficulty()

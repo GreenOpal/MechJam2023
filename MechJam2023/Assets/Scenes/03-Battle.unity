@@ -373,6 +373,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3198494298760140892, guid: 62001b0d4f0c6934d8178d1e6df2da37, type: 3}
   m_PrefabInstance: {fileID: 1045019505}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1045019507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8340910505789089133, guid: 62001b0d4f0c6934d8178d1e6df2da37, type: 3}
+  m_PrefabInstance: {fileID: 1045019505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a5755d7fc0d7f49a41e8075e9355a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1136648731
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +532,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3198494298760140892, guid: 0c3dc7650bf11b646be7e8a963b804b3, type: 3}
   m_PrefabInstance: {fileID: 1345055096}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1345055098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8340910505789089133, guid: 0c3dc7650bf11b646be7e8a963b804b3, type: 3}
+  m_PrefabInstance: {fileID: 1345055096}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a5755d7fc0d7f49a41e8075e9355a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1350683643
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +717,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleController
       objectReference: {fileID: 0}
+    - target: {fileID: 5905639317427329906, guid: 32a7678982c3c4c459a4be0f71349e76, type: 3}
+      propertyPath: _enemyView
+      value: 
+      objectReference: {fileID: 1045019507}
+    - target: {fileID: 5905639317427329906, guid: 32a7678982c3c4c459a4be0f71349e76, type: 3}
+      propertyPath: _playerView
+      value: 
+      objectReference: {fileID: 1345055098}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
