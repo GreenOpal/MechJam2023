@@ -6,3 +6,4 @@ Starring:
 Antony Churchill - Code & Source Control!
 Shivani Rambaran - Design
 Harvey Newbigin	- Character Art
+Jerreau Henry - Composer & Producer
